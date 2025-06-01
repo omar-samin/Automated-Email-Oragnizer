@@ -1,0 +1,82 @@
+{
+  "name": "Gmail Journal Filter",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "filters": {
+          "q": "=Journal"
+        }
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -420,
+        20
+      ],
+      "id": "3aa903d5-5be3-4c14-a411-c68ddea56c7d",
+      "name": "Search \"Journal\"",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "6VbqPQOQN5gkt737",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{$json.id}}",
+        "labelIds": [
+          "Label_4877516085165646534"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        -200,
+        20
+      ],
+      "id": "806b4b6b-cfaa-48b6-adc7-3a080255d32f",
+      "name": "Gmail",
+      "webhookId": "6996a935-7cbc-4834-923b-a412a7ea7fc5",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "6VbqPQOQN5gkt737",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Search \"Journal\"": {
+      "main": [
+        [
+          {
+            "node": "Gmail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "e569cf26-011d-4a4a-aa4e-0a8f4afdfcea",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e925b0edcadaa5eabf2ed212e106ea7b5ce6669692ddd8ff15df38ce14637e30"
+  },
+  "id": "Fya5ZZsL5ty4MGwI",
+  "tags": []
+}

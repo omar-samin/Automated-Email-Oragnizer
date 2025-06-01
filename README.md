@@ -1,4 +1,5 @@
 **Automated Email Organizer**
+
 This n8n workflow automates email organization in Gmail by searching for messages that contain the keyword "Journal" and assigning them a label titled "Omar". The purpose is to streamline inbox management by automatically classifying relevant emails for easy access and tracking.
 
 **Workflow Logic**
